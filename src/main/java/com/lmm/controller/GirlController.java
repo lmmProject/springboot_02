@@ -3,10 +3,12 @@ package com.lmm.controller;
 import com.lmm.domain.Girl;
 import com.lmm.domain.Result;
 import com.lmm.repository.GirlRepository;
+import com.lmm.service.GirlService;
 import com.lmm.utils.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -50,5 +52,24 @@ public class GirlController {
             return ResultUtil.error(1,bindingResult.getFieldError().getDefaultMessage());
         }
         return ResultUtil.sucess(girlRepository.save(girl));
+    }
+
+    @Autowired
+    private GirlService girlService;
+
+    /**
+     * {
+         "timestamp": 1527304398367,
+         "status": 500,
+         "error": "Internal Server Error",
+         "exception": "java.lang.exception",
+         "message": "你可能还在上初中",
+         "path": "/girls/getAge/11"
+         }
+     */
+    @GetMapping(value = "girls/getAge/{id}")
+    public void getAge(@PathVariable("id") Integer id) throws Exception{
+//        System.out.println(1/0);
+        girlService.getAge(id);
     }
 }

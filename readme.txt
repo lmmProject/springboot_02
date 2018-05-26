@@ -6,5 +6,7 @@
 2、AOP编程思想
 
 3、异常处理
-    成功或者失败时，要有统一的格式
-
+    成功或者失败时，要有统一的格式；
+    自定义异常；
+    @ControllerAdvice + @ExceptionHandler；
+    定义枚举类，统一管理code 和 msg
