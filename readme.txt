@@ -10,3 +10,8 @@
     自定义异常；
     @ControllerAdvice + @ExceptionHandler；
     定义枚举类，统一管理code 和 msg
+
+4、单元测试
+    @RunWith(SpringRunner.class)
+    @SpringBootTest
+    @AutoConfigureMockMvc
