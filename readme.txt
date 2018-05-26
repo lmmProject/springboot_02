@@ -15,3 +15,5 @@
     @RunWith(SpringRunner.class)
     @SpringBootTest
     @AutoConfigureMockMvc
+    打包时，跳过单元测试：
+    mvn clean package -Dmaven.test.skip=true

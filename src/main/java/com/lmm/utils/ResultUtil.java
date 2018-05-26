@@ -3,15 +3,19 @@ package com.lmm.utils;
 import com.lmm.domain.Result;
 import com.lmm.enums.ResultEnum;
 
+import static com.lmm.enums.ResultEnum.SUCCESS;
+
 /**
  * 重构：返回结果
  * Created by lmm on 2018/5/6.
  */
 public class ResultUtil {
+
+    @SuppressWarnings("unchecked")
     public static Result sucess(Object obj){
         Result result = new Result();
-        result.setCode(ResultEnum.SUCCESS.getCode());
-        result.setMsg(ResultEnum.SUCCESS.getMsg());
+        result.setCode(SUCCESS.getCode());
+        result.setMsg(SUCCESS.getMsg());
         result.setData(obj);
         return result;
     }
